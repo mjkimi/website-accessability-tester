@@ -6,8 +6,6 @@ const app = express();
 
 app.use(express.static('public'));
 
-const browser = a;
-
 app.get('/api/test', async (req, res) => {
   if (!req.query.url) {
     res.status(400).json({ error: 'url is required' });
