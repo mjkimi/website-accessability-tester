@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Automated Accessibility Testing App</title>
+    <style>
+      .loader {
+        display: none;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            More about this testing method
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          Accessibility Testing is the QA practice of confirming that the
+          website is usable for as many people as possible, including people
+          with disabilities such as vision impairment, hearing problems and
+          cognitive conditions. Testing is done according to the Web Content
+          Accessibility Guidelines (WCAG) 2.1:
+          <a
+            href="https://www.w3.org/TR/WCAG21/"
+            class="link-info"
+            target="_blank"
+            >W3C Recommendation</a
+          >. <br />
+          <hr />
+          This app scans the <code>HTML</code> code of the webpage and shows any
+          found mismatches with W3C documentation.
+          <p>
+            For example, this tag has an empty 'alt' attribute:<br />
+            <code>&lt;img src="example.jpg" alt=""/&gt;</code>. App will let you
+            know about this.
+          </p>
+          <hr />
+          <p class="fst-italic">
+            Fixing these kind of bugs makes your website more precise & neat,
+            especially for screen readers and other accessibility tools.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal">
+            Got it!
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <body>
+    <div class="container-sm">
+      <div class="card my-5 p-3 bg-dark text-light">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <h2 class="mb-3">Automated Accessibility Testing App</h2>
+            <span
+              class="badge rounded-pill bg-warning text-dark position-relative my-1"
+              >Created by mjkimi<span
+                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info"
+              >
+                v1.1
+              </span></span
+            >
+          </div>
+
+          <form id="form">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                id="url"
+                class="form-control"
+                placeholder="Enter testing website like: https://example.com"
+              />
+              <button
+                type="submit"
+                class="btn btn-primary"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Test the website"
+              >
+                Submit
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger"
+                id="clear"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Clear all info"
+              >
+                Clear All
+              </button>
+            </div>
+          </form>
+          <!-- <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button collapsed p-1"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="false"
+                aria-controls="collapseOne"
+              >
+                More about this testing method
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body text-dark">
+                Accessibility Testing is the QA practice of confirming that the
+                website is usable for as many people as possible, including
+                people with disabilities such as vision impairment, hearing
+                problems and cognitive conditions. Testing is done according to
+                the Web Content Accessibility Guidelines (WCAG) 2.1:
+                <a
+                  href="https://www.w3.org/TR/WCAG21/"
+                  class="link-info"
+                  target="_blank"
+                  >W3C Recommendation</a
+                >. <br />
+                This app scans the <code>HTML</code> code of the webpage and
+                shows any found mismatches with W3C documentation.
+                <p>
+                  For example, this tag has an empty 'alt' attribute:
+                  <code>&lt;img src="example.jpg" alt=""/&gt;</code>. App will
+                  let you know about this.
+                </p>
+                <p class="fst-italic">
+                  Fixing these kind of bugs makes your website more precise &
+                  neat, especially for screen readers and other accessibility
+                  tools.
+                </p>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="btn btn-outline-info"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            How it works
+          </button>
+        </div>
+      </div>
+
+      <div class="loader text-center">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div id="message"></div>
+      </div>
+
+      <div id="issues"></div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="js/forBootstrap.js"></script>
+  </body>
+</html>
